@@ -16,7 +16,7 @@ val byteNunmber: Byte = 15
 // 浮点数也类似
 val pi = 3.14159						// 推断为Double
 val e = 2.71828f						// 声明为Float
-val fraction: Float = 1.51   			// 这样声明为Float，后面无需`f`
+// val fraction: Float = 1.51   			// 这样声明为Float，后面无需`f, 错误的
 ```
 
 
@@ -122,3 +122,15 @@ Output:
 
 
 
+## :calendar:2021.02.09
+
+### :key:还是数字类型转换
+
+>To sum up, if you have an expression with different numeric types, use these rules to know the type of the result:
+>
+>1. If either operand is of type `Double`, the result is `Double`.
+>2. Otherwise, if either operand is of type `Float`, the result is `Float`.
+>3. Otherwise, if either operand is of type `Long`, the result is `Long`.
+>4. Otherwise, the result is `Int`.
+>
+>Type conversion does not occur when a value is put into the variable. For example, `val longValue: Long = 10.toInt()` is incorrect, because 10 is `Int` and `longValue` requires `Long` type.
