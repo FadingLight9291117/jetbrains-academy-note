@@ -1,4 +1,4 @@
-# :house:JetBrains Academy Koltin笔记
+# :house:JetBrains Academy Kotlin笔记
 
 ## :calendar:2021.01.29
 
@@ -134,3 +134,78 @@ Output:
 >4. Otherwise, the result is `Int`.
 >
 >Type conversion does not occur when a value is put into the variable. For example, `val longValue: Long = 10.toInt()` is incorrect, because 10 is `Int` and `longValue` requires `Long` type.
+
+
+
+## :calendar:2021.02.25
+
+### :point_right:关于`range`
+
+`...`是左右都是闭区间
+
+```kotlin
+println(5 in 5..15)  // true
+println(15 in 5..15) // true
+```
+
+:key:如果要排除右区间
+
+```kotlin
+val withinExclRight = c in a..b - 1 // a <= c && c < b
+```
+
+还有一些关于字符的
+
+```kotlin
+println('b' in 'a'..'c') // true
+println('k' in 'a'..'e') // false
+
+println("hello" in "he".."hi") // true
+println("abc" in "aab".."aac") // false
+```
+
+### :point_right:多维数组
+
+多维数组可以包含不同类型
+
+```kotlin
+val arrayOfString2D = arrayOf(
+    arrayOf("Practice", "makes", "perfect"),
+    arrayOf(1, 2)
+)
+```
+
+也可以包含不同长度
+
+```kotlin
+val array2D = arrayOf(
+    arrayOf(0),
+    arrayOf(1, 2),
+    arrayOf(3, 4, 5))
+```
+
+### :key:Repeating 块
+
+```kotlin
+repeat(n) {
+    // statements
+}
+```
+
+### :key:`for`循环
+
+只有整型(IntRange, LongRange, CharRange)可以迭代。
+
+比如
+
+```kotlin
+for (i in 1..4) print(i)
+```
+
+但是
+
+```kotlin
+for (i in 'z' downTo 'e' step 200) {}
+```
+
+就不行
